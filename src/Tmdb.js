@@ -70,4 +70,20 @@ export default {
       },
     ];
   },
+  getMovieInfo: async (movieId, type) => {
+    if (movieId) {
+      switch (type) {
+        case 'movie':
+          return await basicFetch(
+            `/movie/${movieId}?language=pt-BR&api_key=${API_KEY}`
+          );
+        case 'tv':
+          return await basicFetch(
+            `/tv/${movieId}?language=pt-BR&api_key=${API_KEY}`
+          );
+        default:
+          return null;
+      }
+    }
+  },
 };
