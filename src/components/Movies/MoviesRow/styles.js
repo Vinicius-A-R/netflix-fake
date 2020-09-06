@@ -20,6 +20,8 @@ export const Row = styled.div`
   position: relative;
   display: flex;
 
+  scroll-behavior: smooth;
+
   div {
     transform: translate3d(200, 0, 0);
   }
@@ -27,7 +29,7 @@ export const Row = styled.div`
   overflow-x: scroll;
 
   &::-webkit-scrollbar {
-    /* opacity: 0; */
+    display: none;
   }
 `;
 

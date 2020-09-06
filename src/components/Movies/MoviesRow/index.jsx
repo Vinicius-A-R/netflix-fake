@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Card from '../../Card/';
 
 import { Container, Grid, Row, ButtonScroll } from './styles';
 
-function MoviesRow({ title, rowId, results }) {
-  const [move, setMove] = useState(154);
-
-  const scrollRight = () => {
+function MoviesRow({ title, results }) {
+  const buttonRight = () => {
     let scroll = document.getElementById(`${title}`);
 
-    if (move < 2010) {
-      setMove(move + 154);
-      scroll.scrollLeft = move;
-    }
+    scroll.scrollLeft += 480;
+  };
 
-    console.log(move);
+  const buttonLeft = () => {
+    let scroll = document.getElementById(`${title}`);
+
+    scroll.scrollLeft -= 320;
   };
 
   return (
@@ -23,13 +22,15 @@ function MoviesRow({ title, rowId, results }) {
       <h2>{title}</h2>
 
       <Grid>
-        <ButtonScroll className="row-left">&#10096;</ButtonScroll>
+        <ButtonScroll className="row-left" onClick={buttonLeft}>
+          &#10096;
+        </ButtonScroll>
         <Row id={title}>
           {results.map((result) => {
             return <Card key={result.id} movie={result} />;
           })}
         </Row>
-        <ButtonScroll className="row-right" onClick={scrollRight}>
+        <ButtonScroll className="row-right" onClick={buttonRight}>
           &#10095;
         </ButtonScroll>
       </Grid>

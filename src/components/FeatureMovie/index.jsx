@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import Tmdb from '../../Tmdb.js';
 
@@ -18,6 +18,7 @@ import {
 function FeatureMovie() {
   const [movieCover, setMovieCover] = useState({});
   const [visible, setVisible] = useState(false);
+  const dispatch = useDispatch();
 
   const { movies } = useSelector((state) => state.netflix);
   const movie = useMemo(() => {
@@ -60,6 +61,10 @@ function FeatureMovie() {
     return arrGenres;
   };
 
+  const handleFavorites = () => {
+    dispatch({ type: 'ADD_FAVORITE_ITEM', payload: movie });
+  };
+
   return (
     <Container
       image={`https://image.tmdb.org/t/p/original${movieCover.backdrop_path}`}
@@ -83,8 +88,12 @@ function FeatureMovie() {
             </Header>
             <Description>{movieCover.overview}</Description>
             <Buttons>
-              <a href={`/watch/${movieCover.id}`}>&#127909; Assistir</a>
-              <a href={`/list/add/${movieCover.id}`}>&#10010; Minha Lista</a>
+              {/* <a href={`/watch/${movieCover.id}`}>&#127909; Assistir</a> */}
+              {/* <a href={`/list/add/${movieCover.id}`}>&#10010; Minha Lista</a> */}
+              <a href="#">&#127909; Assistir</a>
+              <a href="#" onClick={handleFavorites}>
+                &#10010; Minha Lista
+              </a>
             </Buttons>
             <Genres>
               Gêneros: &nbsp;

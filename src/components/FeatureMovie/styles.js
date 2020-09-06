@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
+  max-width: 1400px;
   height: 560px;
-  margin-left: 24px;
   margin-bottom: 48px;
 
   background-size: cover;
@@ -26,6 +26,7 @@ export const Logo = styled.div.attrs((props) => ({
   width: 100%;
   max-width: 1400px;
   height: 96px;
+  padding-left: 24px;
 
   z-index: 999;
   transition: background-color 0.2s ease-in-out;
@@ -58,7 +59,7 @@ export const FeaturedVertical = styled.div`
 export const FeaturedHorizontal = styled.div`
   width: inherit;
   height: inherit;
-  background: linear-gradient(to right, var(--color-dark) 20%, transparent 70%);
+  background: linear-gradient(to right, var(--color-dark) 5%, transparent 50%);
 `;
 
 export const Info = styled.div`
@@ -68,16 +69,13 @@ export const Info = styled.div`
 
   color: #fff;
 
-  width: 50%;
+  width: 100%;
   height: 100%;
+  padding-left: 24px;
   font-weight: 700;
 
   @media (min-width: 300px) {
     width: 100%;
-  }
-
-  @media (min-width: 900px) {
-    width: 50%;
   }
 `;
 
@@ -111,7 +109,9 @@ export const Header = styled.div`
 `;
 
 export const Description = styled.div`
+  width: 75%;
   font-size: 18px;
+  max-height: 148px;
   margin-bottom: 16px;
 
   overflow: hidden;
