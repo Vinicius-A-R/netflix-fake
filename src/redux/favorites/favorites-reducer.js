@@ -1,4 +1,4 @@
-import { addItemsToFavorites } from './favorites-utils';
+import { addToFavorites, removeToFavorites } from './favorites-utils';
 
 const INITIAL_STATE = {
   list: [],
@@ -9,7 +9,12 @@ const favoritesReducer = (state = INITIAL_STATE, action) => {
     case 'ADD_FAVORITE_ITEM':
       return {
         ...state,
-        list: addItemsToFavorites(state.list, action.payload),
+        list: addToFavorites(state.list, action.payload),
+      };
+    case 'REMOVE_FAVORITE_ITEM':
+      return {
+        ...state,
+        list: removeToFavorites(state.list, action.payload),
       };
     default:
       return state;

@@ -4,7 +4,7 @@ import Card from '../../Card/';
 
 import { Container, Grid, Row, ButtonScroll } from './styles';
 
-function MoviesRow({ title, results }) {
+function MoviesSlide({ title, results, favorites }) {
   const buttonRight = () => {
     let scroll = document.getElementById(`${title}`);
 
@@ -27,7 +27,9 @@ function MoviesRow({ title, results }) {
         </ButtonScroll>
         <Row id={title}>
           {results.map((result) => {
-            return <Card key={result.id} movie={result} />;
+            return (
+              <Card key={result.id} movie={result} favorites={favorites} />
+            );
           })}
         </Row>
         <ButtonScroll className="row-right" onClick={buttonRight}>
@@ -38,4 +40,4 @@ function MoviesRow({ title, results }) {
   );
 }
 
-export default MoviesRow;
+export default MoviesSlide;

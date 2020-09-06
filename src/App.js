@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import Tmdb from './Tmdb';
 
@@ -7,7 +7,6 @@ import Routes from './routes';
 
 function App() {
   const dispatch = useDispatch();
-  // const { movies } = useSelector((state) => state.categories);
 
   useEffect(() => {
     const loadAll = async () => {
@@ -18,7 +17,7 @@ function App() {
     };
 
     loadAll();
-  }, []);
+  });
 
   return (
     <>

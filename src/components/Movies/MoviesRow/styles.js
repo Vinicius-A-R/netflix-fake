@@ -20,6 +20,8 @@ export const Row = styled.div`
   position: relative;
   display: flex;
 
+  width: 100%;
+
   scroll-behavior: smooth;
 
   div {
@@ -53,5 +55,9 @@ export const ButtonScroll = styled.div`
     opacity: 0.8;
     font-size: 28px;
     background-color: var(--color-dark-light);
+  }
+
+  @media (max-width: 600px) {
+    display: none;
   }
 `;

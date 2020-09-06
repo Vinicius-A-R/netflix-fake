@@ -16,7 +16,7 @@ function Homepage() {
       {list ? (
         <>
           <FeatureMovie />
-          <Movies list={list} />
+          <Movies moviesList={list} />
         </>
       ) : (
         <Loading />
