@@ -8,7 +8,7 @@ function Movies({ list }) {
   return (
     <Container>
       {list.map(({ title, items }, idx) => {
-        return <MoviesRow key={idx} title={title} {...items} />;
+        return <MoviesRow key={idx} rowId={idx} title={title} {...items} />;
       })}
     </Container>
   );
