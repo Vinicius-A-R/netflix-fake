@@ -71,7 +71,10 @@ function FeatureMovie() {
     >
       <Logo href="/" visible={visible}>
         <a href="/">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Logo_Netflix.png"></img>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Logo_Netflix.png"
+            alt={movieCover.name}
+          ></img>
         </a>
       </Logo>
       <FeaturedVertical>
@@ -90,9 +93,16 @@ function FeatureMovie() {
             <Buttons>
               {/* <a href={`/watch/${movieCover.id}`}>&#127909; Assistir</a> */}
               {/* <a href={`/list/add/${movieCover.id}`}>&#10010; Minha Lista</a> */}
-              <a href="#">&#127909; Assistir</a>
-              <a href="#" onClick={handleFavorites}>
-                &#10010; Minha Lista
+              <a href="#assistir">
+                {/* eslint-disable-next-line */}
+                <span id="assistir" role="img">
+                  &#127909; Assistir
+                </span>
+              </a>
+              <a href="#mylist" onClick={handleFavorites}>
+                <span id="mylist" role="img">
+                  &#10010; Minha Lista
+                </span>
               </a>
             </Buttons>
             <Genres>
