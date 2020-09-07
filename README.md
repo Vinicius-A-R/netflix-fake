@@ -15,7 +15,7 @@ This app web has only a few features of Netflix, this show some films that was f
 
 **Fetching data from :** https://api.themoviedb.org/
 
-** Website :** https://netflix-fake-feb01.web.app/
+**Website :** https://netflix-fake-feb01.web.app/
 
 ## Homepage
 
